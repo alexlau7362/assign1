@@ -1,29 +1,47 @@
-/* Header */
 #header {
-    background-color: #2c3e50; /* Dark blue */
-    color: #ecf0f1; /* Light gray text */
+    background-color: #2c3e50;
+    color: #ecf0f1;
 }
-
-/* Body */
 body {
-    background-color: #f5f6fa; /* Light blue-gray */
-    color: #2c3e50; /* Dark blue text */
+    background-color: #f5f6fa;
+    color: #2c3e50;
 }
-
-/* Buttons */
-input[name="upload_csv"], input[type="file"] {
-    background-color: #3498db; /* Blue */
+.csv-upload-form input[type="file"],
+.csv-upload-form input[name="upload_csv"] {
+    background-color: #3498db;
     color: white;
     font-size: 14px;
     padding: 8px 16px;
     border: none;
     border-radius: 4px;
+    width: 150px;
+    height: 40px;
+    display: inline-block;
+    margin-right: 10px;
+    vertical-align: middle;
+    box-sizing: border-box;
     cursor: pointer;
-    display: block; /* Stack vertically */
-    margin: 5px 0; /* Vertical spacing */
-    width: 150px; /* Fixed width */
 }
-
-input[name="upload_csv"]:hover, input[type="file"]:hover {
-    background-color: #2980b9; /* Darker blue on hover */
+.csv-upload-form input[type="file"]::-webkit-file-upload-button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    height: 40px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.csv-upload-form input[type="file"] {
+    -moz-appearance: none;
+    appearance: none;
+    background-color: #3498db;
+    color: transparent; /* Hide default text in Firefox */
+}
+.csv-upload-form input[name="upload_csv"]:hover,
+.csv-upload-form input[type="file"]:hover::-webkit-file-upload-button,
+.csv-upload-form input[type="file"]:hover {
+    background-color: #2980b9;
+}
+.csv-upload-form {
+    display: inline-block;
 }

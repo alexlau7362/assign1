@@ -3,6 +3,10 @@ from django.contrib import admin
 from django.http import HttpResponse
 from django import forms
 from .models import Product
+from django.contrib.auth.models import User, Group
+
+admin.site.unregister(User)
+admin.site.unregister(Group)
 
 # Register your models here.
 
@@ -25,6 +29,10 @@ class ProductAdmin(admin.ModelAdmin):
     list_display = ['product_code', 'name', 'origin', 'made_in', 'quantity']  # Fields to display
     actions = ['download_selected_as_csv']  # Add download action
     change_list_template = 'admin/products/product_change_list.html'  # Custom template for upload button
+
+    # def has_add_permission(self, request):
+    #    return False  # Disables "Add product" button
+
 
     # Action to download selected products as CSV
     def download_selected_as_csv(self, request, queryset):
